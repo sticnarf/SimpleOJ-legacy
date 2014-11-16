@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: SimpleOJ_production
-  username: SimpleOJ
-  password: <%= ENV['SIMPLEOJ_DATABASE_PASSWORD'] %>

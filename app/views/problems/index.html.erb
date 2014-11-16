@@ -1,0 +1,24 @@
+<%= link_to '创建题目', new_problem_path, class: 'btn btn-primary' %>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>题目编号</th>
+          <th>题目标题</th>
+          <th>通过率</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @problems.each do |p| %>
+        <tr href="<%= problem_path(p) %>">
+          <td><%= p.id %></td>
+          <td><%= p.title %></td>
+          <td><%= p.pass_ratio %>%</td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
