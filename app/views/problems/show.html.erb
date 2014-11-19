@@ -6,3 +6,13 @@
     <%= raw $markdown.render(@problem.description) %>
   </div>
 </div>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h2>提交代码</h2>
+    <%= bootstrap_form_for @submit do |f| %>
+      <%= f.hidden_field :problem_id %>
+      <%= f.text_area :code %>
+      <%= f.submit '提交测试', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

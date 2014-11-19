@@ -1,8 +1,9 @@
-source 'https://ruby.taobao.org'
+# source 'https://ruby.taobao.org'
+source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.7'
+gem 'rails', '4.1.8'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -49,3 +50,4 @@ gem 'redcarpet'
 
 gem 'mathjax-rails', '~> 2.3.0'
 gem 'jquery-turbolinks'
+gem 'sidekiq'

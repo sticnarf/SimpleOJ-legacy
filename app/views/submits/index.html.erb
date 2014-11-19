@@ -1,0 +1,29 @@
+<h2>提交列表</h2>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>题目</th>
+          <th>提交时间</th>
+          <th>状态</th>
+          <th>消耗内存</th>
+          <th>最多用时</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @submits.each do |s| %>
+        <tr href="<%= submit_path(s) %>">
+          <% p = s.problem %>
+          <td><%= link_to p.title, problem_path(p) %></td>
+          <td><%= s.created_at %></td>
+          <td><%= s.status %>%</td>
+          <td><%= s.memory %></td>
+          <td><%= s.time %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+

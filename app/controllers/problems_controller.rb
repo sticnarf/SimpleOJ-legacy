@@ -18,6 +18,7 @@ class ProblemsController < ApplicationController
 
   def show
     @problem = Problem.find_by(id: params[:id])
+    @submit = Submit.new(problem_id: @problem.id)
   end
 
   private

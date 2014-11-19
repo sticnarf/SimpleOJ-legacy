@@ -22,7 +22,7 @@
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li<%= raw(' class="active"') if controller_name == 'problems' %>><%= link_to '题目列表', root_path %></li>
-          <li<%= raw(' class="active"') if controller_name == 'submits' %>><a href="#">提交记录</a></li>
+          <li<%= raw(' class="active"') if controller_name == 'submits' %>><%= link_to '提交记录', submits_path %></li>
         </ul>
       </div>
     </div>
