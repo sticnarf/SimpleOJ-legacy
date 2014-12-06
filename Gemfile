@@ -1,5 +1,5 @@
-# source 'https://ruby.taobao.org'
-source 'https://rubygems.org'
+source 'https://ruby.taobao.org'
+# source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -51,3 +51,7 @@ gem 'redcarpet'
 gem 'mathjax-rails', '~> 2.3.0'
 gem 'jquery-turbolinks'
 gem 'sidekiq'
+gem 'sinatra', '>= 1.3.0', :require => nil
+gem 'carrierwave'
+gem 'carrierwave-postgresql'
+gem 'lrun-ruby'

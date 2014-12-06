@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141119130220) do
+ActiveRecord::Schema.define(version: 20141122142847) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,16 +23,27 @@ ActiveRecord::Schema.define(version: 20141119130220) do
     t.datetime "updated_at"
     t.integer  "pass_count",   default: 0
     t.integer  "submit_count", default: 0
+    t.string   "abbr"
   end
 
   create_table "submits", force: true do |t|
     t.integer  "problem_id"
-    t.integer  "status",     default: 0
+    t.integer  "status",        default: 0
     t.integer  "memory"
     t.integer  "time"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "code"
+    t.integer  "language"
+    t.text     "compiler_info"
+    t.integer  "score"
+  end
+
+  create_table "test_files", force: true do |t|
+    t.integer  "problem_id"
+    t.integer  "data",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "tests", force: true do |t|

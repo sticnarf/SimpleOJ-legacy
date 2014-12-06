@@ -10,7 +10,7 @@ class ProblemsController < ApplicationController
   def create
     @problem = Problem.new(problem_params)
     if @problem.save
-      redirect_to root_url
+      redirect_to @problem
     else
       render 'new'
     end
@@ -21,9 +21,22 @@ class ProblemsController < ApplicationController
     @submit = Submit.new(problem_id: @problem.id)
   end
 
+  def edit
+    @problem = Problem.find_by(id: params[:id])
+  end
+
+  def update
+    @problem = Problem.find_by(id: params[:id])
+    if @problem.update_attributes(problem_params)
+      redirect_to @problem
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   def problem_params
-    params.require(:problem).permit(:title, :description)
+    params.require(:problem).permit(:title, :description, :abbr)
   end
 end

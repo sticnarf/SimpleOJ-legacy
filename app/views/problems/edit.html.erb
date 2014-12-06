@@ -1,0 +1,9 @@
+<div class="col-md-8 col-md-offset-2">
+<%= bootstrap_form_for @problem do |f| %>
+  <h2 class="form-heading">编辑题目</h2>
+  <%= f.text_field :title, autofocus: true, label: '题目标题' %>
+  <%= f.text_field :abbr, label: '输入输出文件名' %>
+  <%= f.text_area :description, label: '题目描述（Markdown）' %>
+  <%= f.submit '提交', class: 'btn btn-lg btn-primary btn-block' %>
+<% end %>
+</div>

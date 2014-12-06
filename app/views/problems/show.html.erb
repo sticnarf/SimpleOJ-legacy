@@ -3,6 +3,9 @@
     <h2><%= @problem.title %></h2>
   </div>
   <div class="col-md-8 col-md-offset-2">
+<% 
+puts $markdown.render(@problem.description)
+%>
     <%= raw $markdown.render(@problem.description) %>
   </div>
 </div>
@@ -12,6 +15,10 @@
     <%= bootstrap_form_for @submit do |f| %>
       <%= f.hidden_field :problem_id %>
       <%= f.text_area :code %>
+      <%= f.radio_button :language, :c, label: 'C', checked: true %>
+      <%= f.radio_button :language, :cpp, label: 'C++' %>
+      <%= f.radio_button :language, :pas, label: 'Pascal' %>
+      <br>
       <%= f.submit '提交测试', class: 'btn btn-primary' %>
     <% end %>
   </div>

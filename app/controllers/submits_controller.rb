@@ -20,6 +20,6 @@ class SubmitsController < ApplicationController
   private
 
   def submit_params
-    params.require(:submit).permit(:problem_id, :code)
+    params.require(:submit).permit(:problem_id, :code, :language)
   end
 end
